@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RoFocus - Get Focused</title>
+        <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+        <link href="./styles/fonts/fonts.css" rel='stylesheet' type='text/css'>
+        <link href="./styles/fonts/font-awesome.min.css" rel='stylesheet' type='text/css'>
+        
+    </head>
+
+    <style>
+      
+        body{width:300px;}
+        .todo-items,
+        .todo-items li{
+          margin:0;
+          padding:0;
+          list-style: none;
+        }
+        .todo-items li{
+          padding:10px;
+          border-bottom: 2px solid grey;
+          display:flex;
+          justify-content: space-between;
+        }
+        .todo-items li:hover{
+          background:rgba(0,0,0,0.25);
+        }
+        .todo-items li.done .item{
+          text-decoration: line-through;
+        }
+        .todo-items div span{
+          margin:5px;
+          font-size:1em;
+          cursor: pointer;
+        }
+        .new-item{
+          display:none;
+        }
+      
+    </style>
+
+
+    <body class="chrome-app" >
+      <div class="main-nav">
+        <!-- <div class="home-btn-nav">
+          Home
+        </div> --><div class="main-nav-item" style="border-right: 2px solid rgba(216, 223, 240, 0.12);"  id="ambience_tab_nav">
+          <i class="fa fa-headphones"></i> &nbsp;&nbsp; Ambience
+        </div><div class="main-nav-item" style="border-right: 2px solid rgba(216, 223, 240, 0.12);" id="focus_timer_tab_nav">
+          <i class="fa fa-clock-o"></i> &nbsp;&nbsp; Focus Timer 
+        </div>    
+      </div>
+      
+      
+
+      <div class="container" id="ambience_tab">
+          <div class="welcome-msg">
+              <h3 id="date_formatted_nicely">.</h3>
+              <h1>Let's get focused.</h1>
+              <!-- h1 changes to random motivational quotes. 'Today, we focus.', 'Let's win today.' 'be more productive', ''  -->
+              <h2>Choose an ambience you want to zone in to. Then, start a focus timer to track your session.</h2>
+          </div>
+          <div id="loading-msg" style="display: none;">
+            The ambience will automatically start playing when it's loaded. It may take a few seconds...
+          </div>
+          <div class="three-buttons-cta">
+            <div class="single-column" id="coffee_shop">
+              <div class="single-button-image">
+                <img src="img/coffee-pic.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Coffee Shop</h2>
+                <p>Recreate the ambient sounds of a Parisien caf&#233;</p>
+              </div>
+            </div>
+            <div class="single-column" id="beach">
+              <div class="single-button-image">
+                <img src="img/beach.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Cuban Beach</h2>
+                <p>Get teleported to a peaceful Cuban island</p>
+              </div>
+            </div>
+             <div class="single-column" id="chirping_birds">
+              <div class="single-button-image">
+                <img src="img/birds.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Morning Birds</h2>
+                <p>Improve concentration with relaxing sounds of chirping birds</p>
+              </div>
+            </div>
+          </div>
+
+           <div class="three-buttons-cta">
+            
+            <div class="single-column" id="forest">
+              <div class="single-button-image">
+                <img src="img/forest.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Amazon Forest</h2>
+                <p>Immerse yourself in the tranquility of the Amazon rainforest</p>
+              </div>
+            </div>
+            
+             
+            <div class="single-column" id="underwater">
+              <div class="single-button-image">
+                <img src="img/deep-sea.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Underwater</h2>
+                <p>Block out distractions 5,000 feet deep into the ocean</p>
+              </div>
+            </div>
+
+
+            <div class="single-column" id="mystical_nature">
+              <div class="single-button-image">
+                <img src="img/mystical_nature.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Mystical Nature</h2>
+                <p>Binaural beats-infused sounds of birds and nature</p>
+              </div>
+            </div>
+
+          </div>
+
+            <div class="three-buttons-cta">
+            
+
+            <div class="single-column" id="campfire">
+              <div class="single-button-image">
+                <img src="img/campfire.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Campfire</h2>
+                <p>Peaceful crackling fire sounds can help you focus</p>
+              </div>
+            </div>
+            
+            <div class="single-column" id="rain">
+              <div class="single-button-image">
+                <img src="img/rain.jpeg"/>
+              </div>
+              <div class="single-button-caption">
+                <h2>Rain</h2>
+                <p>Soothe your mind with the relaxing sound of rain</p>
+              </div>
+            </div>
+            
+            <div class="single-column" id="waves">
+              <div class="single-button-image">
+                <img src="img/waves.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Waves</h2>
+                <p>Focus to the meditative sound of crashing waves</p>
+              </div>
+            </div>
+
+
+              <!-- Instant relaxation  -->
+
+          </div>
+
+          <div class="three-buttons-cta">
+            
+           
+            <div class="single-column" id="dusk-woods">
+              <div class="single-button-image">
+                <img src="img/dusk-woods.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Dusk in the Woods</h2>
+                <p>Get instantly relaxed with the sounds of a sunset in the woods</p>
+              </div>
+            </div>
+            
+            <div class="single-column" id="quiet-city-center">
+              <div class="single-button-image">
+                <img src="img/quiet-city-center.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Quiet City Vibe</h2>
+                <p>Go to a quiet and charming European street</p>
+              </div>
+            </div>
+            <div class="single-column" id="paris_city_center">
+              <div class="single-button-image">
+                <img src="img/paris-downtown.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Downtown Paris</h2>
+                <p>Embrace the charming vibe on the Champs-&#201;lys&#233;es</p>
+              </div>
+            </div>
+
+
+          </div>
+          
+          <div class="three-buttons-cta">
+            
+            <div class="single-column" id="normal-winds">
+              <div class="single-button-image">
+                <img src="img/normal-winds.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Normal Winds</h2>
+                <p>Pleasant winds to help you focus better</p>
+              </div>
+            </div>
+            <div class="single-column" id="stormy-winds">
+              <div class="single-button-image">
+                <img src="img/stormy-winds.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Stormy Winds</h2>
+                <p>More intense winds that can immediately get you into the zone</p>
+              </div>
+            </div>
+            <div class="single-column" id="heavy-winds">
+              <div class="single-button-image">
+                <img src="img/heavy-winds.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Real Winds</h2>
+                <p>Immerse yourself in a magical windy ambience; use headphones!</p>
+              </div>
+            </div>
+
+          </div>
+         
+          <div class="three-buttons-cta">
+            <div class="single-column" id="experimental_temple">
+              <div class="single-button-image">
+                <img src="img/temple.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Experimental Temple</h2>
+                <p>Zone into a meditative state; made in an Asian temple</p>
+              </div>
+            </div>
+            
+            <div class="single-column" id="university-campus">
+              <div class="single-button-image">
+                <img src="img/university-campus.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>University Campus</h2>
+                <p>Get your mind back to a college campus</p>
+              </div>
+            </div>
+            <div class="single-column" id="restaurants">
+              <div class="single-button-image">
+                <img src="img/restaurant.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Lunch in Rome</h2>
+                <p>Get into flow with the bustling chatter of European lunchtime</p>
+              </div>
+            </div>
+            
+
+          </div>
+          
+           <div class="three-buttons-cta">
+            
+            <div class="single-column" id="park-by-river">
+              <div class="single-button-image">
+                <img src="img/park-by-river.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Park by the River</h2>
+                <p>Get focused at a quiet park in Ecuador</p>
+              </div>
+            </div>
+            <div class="single-column" id="binaural-space">
+              <div class="single-button-image">
+                <img src="img/binaural-space.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Binaural Space</h2>
+                <p>Float through space with a binaural sound</p>
+              </div>
+            </div>
+            <div class="single-column" id="binaural-birds">
+              <div class="single-button-image">
+                <img src="img/binaural-birds.jpeg">
+              </div>
+              <div class="single-button-caption">
+                <h2>Binaural Birds</h2>
+                <p>A unique binaural sound mixed with chirping birds</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- potentially at the end of all the tracks, include information on the science -->
+          <!-- adding links to research papers is important for the placebo to work -->
+
+
+          <br/><br/><br/><br/><br/>
+      </div>
+      <div class="container" id="focus_timer_tab">
+          <div class="welcome-msg">
+              <h1>Track your focus sessions.</h1>
+              <h2>Use the Pomodoro technique to break down your focus periods into 25-minute intervals.</h2>
+          </div>
+
+          <div class="main-timer-container">
+
+          </div>
+
+          <div class="timer-settings-container">
+              <div class="timer">
+                <p id="counter"></p>
+              </div>
+              <div class="buttons-container">
+                <input type="number" class="focus timer-element input  timer-btn" id="focus_time_setting" value="25" />
+                <input type="submit" value="Start" id="submit" class="submit timer-btn"></input>
+                <input type="submit" value="Reset" id="reset" class="submit  timer-btn"></input>
+              </div>
+              <div class="" style="text-align: center;padding-top:10px;">
+                <input type="checkbox" id="play_sound_id" name="play_sound" value="1">
+                <label for="play_sound_id"> Play sound when timer ends?</label>
+
+                &nbsp;&nbsp;&nbsp;
+
+                <input type="checkbox" id="hide_seconds_id" name="hide_seconds" value="0">
+                <label for="hide_seconds_id"> Hide seconds from timer?</label><br>
+              </div>
+              
+          </div>
+          <br/><br/><br/><br/><br/><br/>
+      </div>
+
+     
+      <div class="container" id="science_tab">
+        <div class="welcome-msg">
+          <h1>My Todo's</h1>
+          
+      </div>
+      <div class="welcome-msg">
+        <h3>Record your activity and keep a track of your accomplishments!</h3>
+        
+    </div>
+        
+        <button class="create-todo">New Item</button>
+        <div class="new-item">
+          <input type="text"/>
+          <button>Save</button>
+        </div>
+    
+        <ul class="todo-items">
+        </ul>
+    
+        <script src="script.js"></script>
+              
+          </div>
+
+
+          <br/><br/><br/><br/><br/><br/>
+      </div>
+      <div class="container" id="about_tab">
+          <div class="welcome-msg">
+              <h1>Rofocus by Resume Worded</h1>
+              <h2>Thank you for trying out Rofocus! We really appreciate your support.</h2>
+              <!-- CTA of resume worded -->
+              <div class="try-resume-worded-button-footer-one" id="smrlink">
+                Resume Worded
+              </div>
+
+          </div>
+          
+          <div class="quote-callout" style="width: 500px;">
+              <h3>
+                If you're finding this tool useful, I'd really appreciate you sharing it with your network. Not only would it benefit them, but it also enables me to reach more people and build more products like this one at no cost to you.
+                <br/><br/>
+                Products like this one are difficult and expensive to create, but I keep them completely free because I want to make sure as many people can benefit in some way - that's truly our mission. We also don't do ads since we reinvest everything into creating and maintaining our products.
+                <br/><br/>
+                If you got value out of our products, let others know too - we really rely on you!
+                <br/><br/>
+                Thank you!
+                <br/>
+                -Rohan
+                <br/>
+                Founder, Resume Worded
+
+              </h3>
+          </div>
+
+          <div class="welcome-msg" style="width: 450px;text-align: left;">
+              <h2>
+                  At Resume Worded, we make free tools to help you achieve more in your life and career. 
+                  We're immensely grateful to have helped hundreds of thousands get closer to their career 
+                  goals through our tools, and we'd love for you to try them out too. Here are a few links to get you started (right click->open new tab).
+                  <br/><br/>
+                  - <a href="https://resumeworded.com/score">Get a free AI-powered resume review with Score My Resume</a>
+                  <br/><br/>
+                  - <a href="https://resumeworded.com/linkedin-review">Optimize your LinkedIn profile instantly and start getting more opportunities</a>
+                  <br/><br/>
+                  - <a href="https://resumeworded.com/networking-email-templates">Learn how to become an incredible networker with sample emails for every networking situation</a>
+              </h2>
+
+          </div>
+
+          <br/><br/><br/><br/><br/><br/>
+      </div>
+
+      <div class="bottom-nav">
+          <!-- player controls -->
+          <div class="bottom-nav-item play-pause-btn" style="padding:0px;">
+            <div id="player_play" style="padding: 26px;"><i class="fa fa-play"></i>&nbsp;&nbsp; Play</div>
+            <div id="player_stop" style="padding: 26px;"><i class="fa fa-pause"></i>&nbsp;&nbsp; Stop Audio</div>
+            <div id="player_loading" style="padding: 26px;">Loading...</div>
+            <!-- <i class="fa fa-pause" id="player_stop"></i> -->
+            <!-- <i class="fa fa-pause-circle"></i> -->
+          </div> 
+          <div class="bottom-nav-item volume-controls">
+            <i class="fa fa-volume-off" aria-hidden="true"></i><input id="player_volume" type="range" min="0" max="100" step="1" style="width:50%;padding: 4px 0px;margin-left: 9px;" />
+          </div> 
+          <!-- <div class="bottom-nav-item timer-progress"> -->
+          <div class="bottom-nav-item timer-progress" id="timer_progress">  
+             Timer
+          </div> 
+          <div class="bottom-nav-item by-resume-worded-container">  
+            <div class="by-resume-worded" id="science_tab_nav">  
+              <i class="fa fa-flask"></i><!--  &nbsp;&nbsp; Science -->
+            </div><div class="by-resume-worded" id="about_tab_nav">  
+               <i class="fa fa-heart"></i><!--  &nbsp;&nbsp; About -->
+            </div>
+          </div>
+          <!-- <div class="bottom-nav-item by-resume-worded" id="about_tab_nav">  
+             <i class="fa fa-heart"></i> &nbsp;&nbsp; About
+          </div>  -->
+      </div> 
+<!-- 
+  <div class="play-sound-btn" style="background: black; color: white; width: 100px;height: 50px;padding:50px;" id="playtest">
+              Play
+            </div> -->
+   
+
+    </body>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/howler.core.min.js"></script>
+    <script src="./js/ambient_sound.js"></script>
+    <script src="./js/moment.js"></script>
+    <script src="./js/background.js"></script>
+    <script src="./js/popup.js"></script>
+    <script src="./js/sounds_db.js"></script>
+    <script src="./script.js"></script>
+
+
+
+</html>
+
+<!-- 
+  random copy to use:
+    - this ambiance can stimulate creativity
+    helps people concentrate
+    Well-selected natural sounds are lullabies to make you sleep tight. Originate gentle-wake alarm to rouse you with love and charm.
+    Immersive Concentration
+
+  
+ -->
