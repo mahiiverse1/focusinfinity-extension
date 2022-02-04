@@ -1,3 +1,5 @@
+//todo list js
+
 document.querySelector('.create-todo').addEventListener('click',function(){
     document.querySelector('.new-item').style.display='block';
   });
