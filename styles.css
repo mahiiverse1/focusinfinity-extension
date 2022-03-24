@@ -9,13 +9,15 @@
   /*display: flex;*/
   /*height: 75px;*/
   /*background: #fafaff;*/
-  background: #e6edff;
+  background: #7284d8;
   
-   background: #6a8bad;
+   background: #7284d8;
   color: #fff;
   position: fixed;
   opacity: 50.0;
 }
+
+
 
 .home-btn-nav {
   width: 50px;
@@ -41,7 +43,7 @@
   /*background: white;*/
   /*box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.04) !important;*/
   /*box-shadow: inset 0px -5px 0px 0px #001aff !important;*/
-  background: #b0c1d4;
+  background: #9f86fa;
   cursor: auto;
 }
 
@@ -51,21 +53,24 @@
   /*box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.04) !important;*/
   /*box-shadow: inset 0px -5px 0px 0px #001aff !important;*/
   transition: background-color .2s linear;
-  background: #b0c1d4;
+  background: #9f86fa;
 }
 
 .container {
   /*margin-top: 10px;*/
   
     padding: 20px;
-    padding-top: 120px;
+    padding-top: 90px;
 }
 
+
 .welcome-msg h3 {
-  color: #9b9997;
+  color: #000000;
   letter-spacing: 1px;
   font-weight: 400;
   text-transform: uppercase;
+  padding-left: 420px;
+  
 }
 
 .welcome-msg h1 {
@@ -132,12 +137,12 @@
 }
 
 .bottom-nav {
-  background: #e6edff;
+  background: #7284d8;
   height: 75px;
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: #6a8bad;
+  background: #7284d8;
   /*box-shadow: 0 5px 20px 0 rgba(11,7,110,.04);*/
   /*background-color: #000;*/
   opacity: 0.9;
@@ -223,7 +228,7 @@
     transition: .25s;
     border-radius: 50px;
     color: #ffffff;
-    background-color: #6a8bad;
+    background-color: #7284d8;
     border-color: transparent;
     text-align: center;
     padding: 0.55rem 0.95rem;
@@ -285,7 +290,7 @@
   /*background: white;*/
   /*box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.04) !important;*/
   /*box-shadow: inset 0px -5px 0px 0px #001aff !important;*/
-  background: #b0c1d4;
+  background: #7284d8;
   cursor: auto;
 }
 
@@ -295,7 +300,7 @@
   /*box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.04) !important;*/
   /*box-shadow: inset 0px -5px 0px 0px #001aff !important;*/
   transition: background-color .2s linear;
-  background: #b0c1d4;
+  background: #7284d8;
 }
 
 .timer-progress {
@@ -343,7 +348,7 @@
   }
 
 .by-resume-worded-container:hover {
-  background: #6a8bad;
+  background: #8f82d3;
 }
 
 #loading-msg {
@@ -403,13 +408,13 @@ body{width:300px;}
           
         }
         .todo-items .itemComplete:hover{
-          color: #6a8bad;
+          color: #7284d8;
         }
         .todo-items .itemDelete{
           font-size: 25px;
         }
         .todo-items .itemDelete:hover{
-          color: #6a8bad;
+          color: #7284d8;
         }
         .todo-items .item{
           font-size: 25px;
@@ -418,7 +423,7 @@ body{width:300px;}
 .create-todo{
   height: 40px;
   width: 600px;
-  background: #6a8bad;
+  background: #7284d8;
   border-radius: 10px;
   margin-left: 25px;
   font-size: 18px;
