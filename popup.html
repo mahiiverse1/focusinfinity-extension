@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
     </head>
+   
 
     <style>
 
@@ -26,9 +27,11 @@
       
 
       <div class="container" id="ambience_tab">
+        <img src="focus.png" align="left" width="200px" height= "120px"/>
           <div class="welcome-msg">
-              <h3 id="date_formatted_nicely">.</h3>
-              <h1>Let's get focused.</h1>
+              <h3 class="date" id="date_formatted_nicely" align="right">.</h3>
+              
+              <h1>Try a sound!</h1>
               <!-- h1 changes to random motivational quotes. 'Today, we focus.', 'Let's win today.' 'be more productive', ''  -->
               <h2>Choose an ambience you want to zone in to. Then, start a focus timer to track your session.</h2>
           </div>
@@ -278,7 +281,9 @@
           <br/><br/><br/><br/><br/>
       </div>
       <div class="container" id="focus_timer_tab">
+        <img src="focus.png" align="left" width="200px" height= "120px"/>
           <div class="welcome-msg">
+            <br> <br> <br> <br> <br> <br>
               <h1>Track your focus sessions.</h1>
               <h2>Use the Pomodoro technique to break down your focus periods into 25-minute intervals.</h2>
           </div>
@@ -310,8 +315,9 @@
           <br/><br/><br/><br/><br/><br/>
       </div>
       <div class="container" id="science_tab">
+        <img src="focus.png" align="left" width="200px" height= "120px"/>
 
-        
+        <br><br><br><br><br><br>
           <div class="welcome-msg">
             <h1>Your Own To-Do List!</h1>
             
@@ -340,7 +346,7 @@
           <br/><br/><br/><br/><br/><br/>
       </div>
     
-      <div class="notes" id="app">
+    <!--  <div class="notes" id="app">
          <div class="notes__sidebar">
             <button class="notes__add" type="button">Add Note</button>
             <div class="notes__list">
@@ -355,7 +361,7 @@
             <input class="notes__title" type="text" placeholder="Enter a title...">
             <textarea class="notes__body" placeholder="Write something..."></textarea>
         </div> 
-    </div>
+    </div>-->
 
       <div class="bottom-nav">
           <!-- player controls -->
@@ -400,7 +406,7 @@
     <script src="./js/sounds_db.js"></script>
 
      <!-- custom JS -->
-<script src="./script.js"></script>
+<script src="script.js"></script>
     
      <!-- Bootstrap JS -->
 <script
